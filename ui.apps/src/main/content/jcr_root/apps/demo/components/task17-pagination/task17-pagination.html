@@ -1,0 +1,34 @@
+
+<sly data-sly-use.model="com.adobe.aem.guides.demo.core.models.Task17PaginationModel"/>
+
+<div class="cmp-task17-pagination">
+
+    <h2>Task 17 - Child Page Pagination</h2>
+
+    <p>
+        Parent Page: ${model.parentPagePath}
+    </p>
+
+    <p>
+        Page Number: ${model.pageSize}
+    </p>
+
+    <p>
+        Page Limit: ${model.pageLimit}
+    </p>
+
+    <p>
+        Total Results: ${model.totalResults}
+    </p>
+
+    <p>
+        Total Pagination Pages: ${model.totalPages}
+    </p>
+
+    <ul data-sly-list.page="${model.pages}">
+        <li>${page}</li>
+    </ul>
+
+    <p>${model.message}</p>
+
+</div>

@@ -1,0 +1,20 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.css @ categories='demo.food-showcase-banner'}"/>
+<section class="food-app">
+    <section class="food-promo" id="offers">
+        <div class="food-promo-content">
+            <p class="food-eyebrow">${properties.eyebrow || 'DELICIOUS FOOD, DELIVERED'}</p>
+            <h1>${properties.heading || 'Get Up to'} <span>${properties.offerText || '50% OFF'}</span></h1>
+            <p>${properties.description || 'Discover your favourite restaurants.'}</p>
+            <a class="food-order-button"
+               href="${properties.buttonLink || '#restaurants' @ context='uri'}">
+                ${properties.buttonText || 'Explore restaurants →'}
+            </a>
+        </div>
+        <div class="food-promo-image">
+            <img src="${properties.imagePath || 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=85' @ context='uri'}"
+                 alt="${properties.imageAlt || 'Delicious burger with fresh ingredients'}"
+                 loading="eager"/>
+        </div>
+    </section>
+</section>

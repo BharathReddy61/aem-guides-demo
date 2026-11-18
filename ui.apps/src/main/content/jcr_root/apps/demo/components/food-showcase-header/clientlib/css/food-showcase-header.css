@@ -1,0 +1,407 @@
+.food-app {
+    --food-orange: #ff5a1f;
+    --food-ink: #182230;
+    color: var(--food-ink);
+    font-family: Arial, sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.food-app * {
+    box-sizing: border-box;
+}
+
+/* Header */
+.food-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 0 0;
+    border-bottom: 1px solid #e8eaf0;
+    background-color: #fff;
+}
+
+.food-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--food-ink);
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.food-logo-icon {
+    background: var(--food-orange);
+    color: white;
+    padding: 9px;
+    border-radius: 50%;
+}
+
+.food-orange,
+.food-promo h1 span {
+    color: var(--food-orange);
+}
+
+.food-nav {
+    display: flex;
+    gap: 22px;
+}
+
+.food-nav a {
+    color: var(--food-ink);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.food-nav a:hover {
+    color: var(--food-orange);
+}
+
+.food-search {
+    width: 230px;
+    max-width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e1e5eb;
+    border-radius: 24px;
+}
+
+/* Promotional banner */
+.food-promo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 220px;
+    margin: 26px 0 36px;
+    padding: 30px 5%;
+    overflow: hidden;
+    border-radius: 18px;
+    background: linear-gradient(110deg, #fff0e8, #ffd1b8);
+}
+
+.food-promo-content {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.food-eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.food-promo h1 {
+    margin: 12px 0;
+    font-size: clamp(28px, 4vw, 44px);
+}
+
+.food-order-button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 13px 20px;
+    border-radius: 9px;
+    background: var(--food-orange);
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.food-order-button:hover {
+    background: #ed4814;
+}
+
+/* Banner photograph */
+.food-promo-image {
+    flex: 0 0 220px;
+    width: 220px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.food-promo-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Restaurant section heading */
+.food-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.food-section-heading h2 {
+    margin-bottom: 5px;
+}
+
+.food-section-heading p,
+.food-card-body > p {
+    color: #697386;
+    font-size: 14px;
+}
+
+/* Carousel layout */
+.food-carousel-layout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Carousel arrows */
+.food-arrow {
+    display: flex;
+    flex: 0 0 42px;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid #e2e6ec;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--food-ink);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #17203312;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.food-arrow:hover {
+    color: #fff;
+    background: var(--food-orange);
+}
+
+.food-arrow:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Horizontal scrolling restaurant track */
+.food-restaurant-track {
+    display: grid;
+    flex: 1 1 0;
+    min-width: 0;
+    grid-template-rows: auto;
+    grid-auto-columns: calc((100% - 60px) / 4);
+    grid-auto-flow: column;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 2px 2px 16px;
+}
+
+.food-restaurant-track::-webkit-scrollbar {
+    height: 7px;
+}
+
+.food-restaurant-track::-webkit-scrollbar-thumb {
+    background: #d8dce3;
+    border-radius: 10px;
+}
+
+/* Restaurant cards */
+.food-restaurant-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #e8eaf0;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 4px 14px #1720330d;
+    scroll-snap-align: start;
+}
+
+.food-restaurant-card[hidden] {
+    display: none !important;
+}
+
+/* Restaurant photographs */
+.food-restaurant-image {
+    display: block;
+    height: 187px;
+    min-height: 187px;
+    flex-shrink: 0;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.food-restaurant-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.25s ease;
+}
+
+.food-restaurant-card:hover .food-restaurant-image img {
+    transform: scale(1.04);
+}
+
+/* Preserve the original restaurant background colors */
+.food-pizza {
+    background: #fff0df;
+}
+
+.food-burger {
+    background: #fce7d0;
+}
+
+.food-biryani {
+    background: #f7efd4;
+}
+
+.food-sushi {
+    background: #e5f3e8;
+}
+
+.food-pasta {
+    background: #ffe7e0;
+}
+
+/* Card content */
+.food-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+}
+
+.food-card-body h3 {
+    margin: 0 0 8px;
+}
+
+.food-card-body p {
+    margin: 6px 0;
+}
+
+.food-rating {
+    color: #c77800 !important;
+}
+
+/* View Menu button */
+.food-app a.food-menu-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 46px;
+    margin-top: auto;
+    padding: 11px;
+    border: 1px solid var(--food-orange);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--food-orange);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.food-app a.food-menu-button:hover,
+.food-app a.food-menu-button:focus-visible {
+    background: var(--food-orange);
+    color: #fff;
+    text-decoration: none;
+    outline-offset: 3px;
+}
+
+/* Tablet layout */
+@media (max-width: 900px) {
+    .food-restaurant-track {
+        grid-auto-columns: calc((100% - 20px) / 2);
+    }
+
+    .food-header {
+        flex-wrap: wrap;
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 560px) {
+    .food-app {
+        padding: 12px;
+    }
+
+    .food-nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .food-search {
+        width: 100%;
+    }
+
+    .food-promo {
+        padding: 22px;
+        gap: 12px;
+    }
+
+    .food-promo h1 {
+        font-size: 26px;
+    }
+
+    .food-promo-image {
+        flex: 0 0 90px;
+        width: 90px;
+        height: 100px;
+    }
+
+    .food-promo-image img {
+        border-radius: 10px;
+    }
+
+    .food-carousel-layout {
+        gap: 6px;
+    }
+
+    .food-arrow {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .food-restaurant-track {
+        grid-auto-columns: 82%;
+    }
+
+    .food-restaurant-image {
+        height: 125px;
+        min-height: 125px;
+    }
+}
+
+
+/* Targeted fix: remove excess space below the Food Showcase Header */
+.food-app {
+    padding-bottom: 0;
+}
+
+.food-header {
+    padding-bottom: 0;
+}
+
+/* FINAL HEADER COLOR FIX */
+.food-header {
+    background-color: #fff !important;
+    border-bottom: 1px solid #e8eaf0 !important;
+}

@@ -1,0 +1,135 @@
+/* Main FoodApp Footer */
+.foodapp-footer {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #171717;
+    color: #ffffff;
+    padding: 45px 6% 20px;
+    font-family: Arial, sans-serif;
+}
+
+.foodapp-footer * {
+    box-sizing: border-box;
+}
+
+.foodapp-footer__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Brand Section */
+.foodapp-footer__brand {
+    min-width: 0;
+}
+
+.foodapp-footer__logo {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.foodapp-footer__logo span {
+    color: #ff7a24;
+}
+
+.foodapp-footer__brand p,
+.foodapp-footer__contact p {
+    color: #d1d5db;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 8px 0;
+}
+
+/* Section Headings */
+.foodapp-footer__links h3,
+.foodapp-footer__contact h3 {
+    margin: 5px 0 18px;
+    color: #ff7a24;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Navigation Links */
+.foodapp-footer__links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.foodapp-footer__links li {
+    margin: 0 0 12px;
+    padding: 0;
+}
+
+.foodapp-footer__links a {
+    color: #d1d5db;
+    font-size: 15px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.foodapp-footer__links a:hover,
+.foodapp-footer__links a:focus {
+    color: #ff7a24;
+}
+
+/* Contact Section */
+.foodapp-footer__contact {
+    min-width: 0;
+}
+
+/* Copyright Bar */
+.foodapp-footer__bottom {
+    max-width: 1400px;
+    margin: 35px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #3a3a3a;
+}
+
+.foodapp-footer__bottom p {
+    margin: 0;
+    color: #d1d5db;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .foodapp-footer__container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+    .foodapp-footer {
+        padding: 30px 22px 20px;
+    }
+
+    .foodapp-footer__container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .foodapp-footer__logo {
+        font-size: 28px;
+    }
+
+    .foodapp-footer__bottom {
+        margin-top: 25px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .foodapp-footer__links a {
+        transition: none;
+    }
+}

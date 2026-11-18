@@ -1,0 +1,5 @@
+{
+  "user.mapping": [
+    "aem-guides-demo.core:wordpress-migration=[wordpress-migration-service]"
+  ]
+}

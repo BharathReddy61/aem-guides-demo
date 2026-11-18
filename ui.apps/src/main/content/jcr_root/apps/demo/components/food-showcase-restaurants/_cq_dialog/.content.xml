@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Food Showcase Restaurants"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <heading
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Section Heading"
+                name="./heading"
+                value="Popular Restaurants"/>
+            <subtitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Section Subtitle"
+                name="./subtitle"
+                value="Something delicious is waiting for you."/>
+            <restaurants
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                composite="{Boolean}true"
+                fieldDescription="Add, edit, remove, and reorder restaurant cards."
+                fieldLabel="Restaurant Cards">
+                <field
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    name="./restaurants">
+                    <items jcr:primaryType="nt:unstructured">
+                        <name
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Restaurant Name"
+                            name="./name"
+                            value="Pizza Palace"/>
+                        <cuisine
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Cuisine / Category"
+                            name="./cuisine"
+                            value="Italian · Pizza"/>
+                        <rating
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                            fieldLabel="Rating"
+                            name="./rating"
+                            value="4.5"/>
+                        <prepTime
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Preparation Time"
+                            name="./prepTime"
+                            value="30 mins"/>
+                        <imagePath
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldDescription="Enter a DAM asset path or an image URL."
+                            fieldLabel="Restaurant Image URL"
+                            name="./imagePath"/>
+                        <imageAlt
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Image Description"
+                            name="./imageAlt"
+                            value="Restaurant food"/>
+                        <menuLink
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldLabel="Menu Page Path"
+                            name="./menuLink"/>
+                    </items>
+                </field>
+            </restaurants>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,31 @@
+<div class="cmp-upstream"
+     data-component="upstream">
+
+    <h2>Upstream Component</h2>
+
+    <div class="cmp-upstream__content">
+
+        <p data-sly-test="${properties.textfield}">
+            Textfield: ${properties.textfield}
+        </p>
+
+        <p data-sly-test="${properties.pathfield}">
+            Pathfield: ${properties.pathfield}
+        </p>
+
+        <div data-sly-test="${properties.richtext}">
+            RichText:
+            ${properties.richtext @ context='html'}
+        </div>
+
+        <p data-sly-test="${properties.numberfield}">
+            Numberfield: ${properties.numberfield}
+        </p>
+
+        <p data-sly-test="${properties.datefield}">
+            Datefield: ${properties.datefield}
+        </p>
+
+    </div>
+
+</div>

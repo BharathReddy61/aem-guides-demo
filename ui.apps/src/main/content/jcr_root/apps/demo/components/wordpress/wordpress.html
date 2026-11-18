@@ -1,0 +1,46 @@
+<sly data-sly-use.model="com.adobe.aem.guides.demo.core.models.WordPressModel">
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories='demo.wordpress'}"/>
+
+    <div class="wordpress-container">
+
+        <h2 class="wordpress-heading">
+            Latest Articles from WordPress
+        </h2>
+
+        <div class="wordpress-grid"
+             data-sly-test="${model.articles.size > 0}">
+
+            <div class="wordpress-card"
+                 data-sly-list.article="${model.articles}">
+
+                <h3 class="wordpress-title">
+                    ${article.title}
+                </h3>
+
+                <p class="wordpress-date">
+                    Published: ${article.date}
+                </p>
+
+                <p class="wordpress-description">
+                    ${article.excerpt}
+                </p>
+
+                <a href="${article.link}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Read More
+                </a>
+
+            </div>
+
+        </div>
+
+        <div data-sly-test="${model.articles.size == 0}">
+            No articles available from WordPress.
+        </div>
+
+    </div>
+
+</sly>

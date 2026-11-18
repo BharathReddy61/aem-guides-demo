@@ -1,0 +1,324 @@
+.demo-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    border-radius: 12px;
+}
+
+.demo-container h1 {
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.demo-container h2 {
+    color: #2563eb;
+    border-bottom: 2px solid #dbeafe;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+.demo-card {
+    background: #ffffff;
+    padding: 18px;
+    margin: 15px 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.demo-card p {
+    color: #475569;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.demo-card strong {
+    color: #0f172a;
+}
+
+/* Main component container */
+.demo-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    font-family: Arial, sans-serif;
+    color: #1e293b;
+}
+
+/* Employee and contact cards */
+.demo-card,
+.cf-card {
+    background-color: #ffffff;
+    padding: 24px;
+    margin: 20px 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Section headings */
+.demo-card h2,
+.cf-card h2,
+.cf-card h3 {
+    color: #2563eb;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dbeafe;
+}
+
+/* Content Fragment fields */
+.cf-card dl {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 12px;
+    margin: 0;
+}
+
+.cf-card dt {
+    font-weight: bold;
+    color: #334155;
+}
+
+.cf-card dd {
+    margin: 0;
+    color: #475569;
+    overflow-wrap: anywhere;
+}
+
+/* Employee and contact text */
+.demo-card p {
+    line-height: 1.6;
+    margin: 12px 0;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+    .demo-container {
+        padding: 12px;
+    }
+
+    .cf-card dl {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .cf-card dd {
+        margin-bottom: 12px;
+    }
+}
+
+/* Style both AEM Content Fragment components */
+.cmp-contentfragment {
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 24px;
+    background-color: #ffffff;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    font-family: Arial, sans-serif;
+}
+
+/* Content Fragment heading */
+.cmp-contentfragment h1,
+.cmp-contentfragment h2,
+.cmp-contentfragment h3 {
+    color: #2563eb;
+    border-bottom: 2px solid #dbeafe;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Content Fragment field labels and values */
+.cmp-contentfragment dl {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 12px;
+}
+
+.cmp-contentfragment dt {
+    font-weight: bold;
+    color: #334155;
+}
+
+.cmp-contentfragment dd {
+    margin: 0;
+    color: #475569;
+    overflow-wrap: anywhere;
+}
+
+/* Content Fragment text */
+.cmp-contentfragment p {
+    line-height: 1.6;
+    margin: 12px 0;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .cmp-contentfragment {
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    .cmp-contentfragment dl {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+}
+
+/* Main Content Fragment container */
+.cf-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #f5f7fb;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    color: #1e293b;
+    box-sizing: border-box;
+}
+
+/* Content Fragment title */
+.cf-container > h2 {
+    color: #2563eb;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #dbeafe;
+}
+
+/* Two separate sections */
+.cf-sections {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Employee and Contact cards */
+.cf-section {
+    background-color: #ffffff;
+    padding: 22px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+/* Section headings */
+.cf-section h3 {
+    color: #2563eb;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dbeafe;
+}
+
+/* Field layout */
+.cf-fields {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.cf-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cf-field strong {
+    color: #334155;
+    font-size: 14px;
+}
+
+.cf-field span {
+    color: #475569;
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+/* Responsive layout */
+@media (max-width: 650px) {
+    .cf-container {
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    .cf-sections {
+        grid-template-columns: 1fr;
+    }
+
+    .cf-section {
+        padding: 18px;
+    }
+}
+
+/* Content Fragment outer container */
+.cmp-contentfragment {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #f5f7fb;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    color: #1e293b;
+    box-sizing: border-box;
+}
+
+/* Content Fragment title */
+.cmp-contentfragment > h2,
+.cmp-contentfragment > h3 {
+    color: #2563eb;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #dbeafe;
+}
+
+/* Employee Details and Contact Details cards */
+.cf-section {
+    background-color: #ffffff;
+    padding: 22px;
+    margin: 20px 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+/* Section headings */
+.cf-section h3 {
+    color: #2563eb;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dbeafe;
+}
+
+/* Field labels and values */
+.cf-section dt {
+    font-weight: bold;
+    color: #334155;
+}
+
+.cf-section dd {
+    margin: 5px 0 15px;
+    color: #475569;
+    overflow-wrap: anywhere;
+}
+
+/* Responsive layout */
+@media (max-width: 650px) {
+    .cmp-contentfragment {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .cf-section {
+        padding: 15px;
+    }
+}

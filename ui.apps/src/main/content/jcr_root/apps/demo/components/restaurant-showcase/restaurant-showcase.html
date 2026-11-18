@@ -1,0 +1,75 @@
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+<sly data-sly-call="${clientlib.css @ categories='demo.restaurant-showcase'}" />
+
+<section class="restaurant-showcase"
+         data-restaurant-carousel
+         aria-label="Restaurant showcase">
+
+    <h2 class="restaurant-showcase__title">
+        ${properties.sectionTitle || 'Discover Restaurants'}
+    </h2>
+
+    <div class="restaurant-showcase__carousel">
+
+        <button class="restaurant-showcase__arrow restaurant-showcase__arrow--left"
+                type="button"
+                aria-label="Previous restaurants"
+                data-carousel-prev>&#8249;</button>
+
+        <div class="restaurant-showcase__viewport">
+            <div class="restaurant-showcase__track" data-carousel-track>
+
+                <sly data-sly-list.container="${resource.children}">
+                    <sly data-sly-test="${container.name == 'restaurants'}">
+
+                        <sly data-sly-list.restaurant="${container.children}">
+                            <article class="restaurant-card">
+
+                                <img class="restaurant-card__image"
+                                     data-sly-test="${restaurant.restaurantImage}"
+                                     src="${restaurant.restaurantImage @ context='uri'}"
+                                     alt="${restaurant.restaurantName}"
+                                     loading="lazy" />
+
+                                <div class="restaurant-card__body">
+                                    <h3>${restaurant.restaurantName}</h3>
+
+                                    <p class="restaurant-card__cuisine"
+                                       data-sly-test="${restaurant.cuisine}">
+                                        ${restaurant.cuisine}
+                                    </p>
+
+                                    <p data-sly-test="${restaurant.description}">
+                                        ${restaurant.description}
+                                    </p>
+
+                                    <p class="restaurant-card__rating"
+                                       data-sly-test="${restaurant.rating}">
+                                        Rating: ${restaurant.rating}/5
+                                    </p>
+
+                                    <a data-sly-test="${restaurant.detailsLink}"
+                                       class="restaurant-card__link"
+                                       href="${restaurant.detailsLink @ context='uri'}">
+                                        View Details
+                                    </a>
+                                </div>
+
+                            </article>
+                        </sly>
+                    </sly>
+                </sly>
+
+            </div>
+        </div>
+
+        <button class="restaurant-showcase__arrow restaurant-showcase__arrow--right"
+                type="button"
+                aria-label="Next restaurants"
+                data-carousel-next>&#8250;</button>
+
+    </div>
+</section>
+
+<sly data-sly-call="${clientlib.js @ categories='demo.restaurant-showcase'}" />

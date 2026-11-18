@@ -1,0 +1,64 @@
+# Maven generated files
+**/target/
+
+# Node modules
+node_modules/
+
+# IDE files
+.idea/
+.classpath
+.project
+.settings/
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Compiled Java
+*.class
+
+# Temporary files
+*.tmp
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
+
+
+# Generated frontend output
+ui.frontend/dist/
+
+# Bundled Node runtime
+**/node/node.exe
+**/node/npm
+**/node/npm.cmd
+
+# Temporary backups
+*.pre-copy-backup
+*.before-*
+*.cart-backup
+*.orange-menu-backup
+*.image-alignment-backup
+*.interaction-fix-backup
+*.card-layout-repair-backup
+*.targeted-card-fix-backup
+
+# Logs and accidental files
+*.log
+core/cp.txt
+core/htl-validation.logSelect-String
+
+
+# Historical backup files and folders
+**/*backup*
+**/*Backup*
+**/*.before-*
+**/*.pre-*

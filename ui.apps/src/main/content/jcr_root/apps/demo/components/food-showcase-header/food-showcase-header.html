@@ -1,0 +1,18 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.css @ categories='demo.food-showcase-header'}"/>
+<header class="food-app">
+    <header class="food-header">
+        <a class="food-logo" href="${properties.homeLink @ context='uri'}" aria-label="FoodApp home">
+            <span class="food-logo-icon">🍴</span>
+            <span>${properties.brandName || 'FoodApp'}</span>
+        </a>
+        <nav class="food-nav" aria-label="Main navigation">
+            <a href="${properties.homeLink @ context='uri'}">Home</a>
+            <a href="${properties.restaurantsLink || '#restaurants' @ context='uri'}">Restaurants</a>
+            <a href="${properties.offersLink || '#offers' @ context='uri'}">Offers</a>
+        </nav>
+        <input class="food-search" type="search"
+               placeholder="${properties.searchPlaceholder || 'Search restaurants...'}"
+               aria-label="Search restaurants"/>
+    </header>
+</header>

@@ -1,0 +1,59 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='demo.food-banner-carousel'}"></sly>
+
+<section class="food-banner-carousel"
+         data-food-banner-carousel
+         aria-label="Promotional offers">
+
+    <sly data-sly-list.child="${resource.children}">
+        <div data-sly-test="${child.name == 'slides'}"
+             class="food-banner-carousel__slides">
+
+            <article class="food-banner-carousel__slide"
+                     data-sly-list.slide="${child.children}"
+                     data-slide-index="${slideList.index}"
+                     style="${slideList.first ? 'display:flex' : 'display:none' @ context='styleString'}"
+                     aria-hidden="${slideList.first ? 'false' : 'true'}">
+
+                <div class="food-banner-carousel__background"
+                     data-sly-test="${slide.image}"
+                     style="background-image: url('${slide.image @ context='uri'}')">
+                </div>
+
+                <div class="food-banner-carousel__content">
+                    <h2 data-sly-test="${slide.title}">
+                        ${slide.title}
+                    </h2>
+
+                    <p data-sly-test="${slide.description}">
+                        ${slide.description}
+                    </p>
+
+                    <a class="food-banner-carousel__cta"
+                       data-sly-test="${slide.ctaText && slide.ctaLink}"
+                       href="${slide.ctaLink @ context='uri'}">
+                        ${slide.ctaText}
+                    </a>
+                </div>
+            </article>
+        </div>
+    </sly>
+
+    <button class="food-banner-carousel__arrow food-banner-carousel__prev"
+            type="button"
+            aria-label="Previous promotion"
+            data-carousel-prev>
+        &#10094;
+    </button>
+
+    <button class="food-banner-carousel__arrow food-banner-carousel__next"
+            type="button"
+            aria-label="Next promotion"
+            data-carousel-next>
+        &#10095;
+    </button>
+
+    <div class="food-banner-carousel__dots"
+         data-carousel-dots
+         aria-label="Choose a promotion"></div>
+</section>

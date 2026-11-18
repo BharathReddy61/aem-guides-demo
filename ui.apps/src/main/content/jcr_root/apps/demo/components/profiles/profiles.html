@@ -1,0 +1,23 @@
+
+<div class="cmp-profiles"
+     data-sly-test="${properties.name || properties.imagePath}">
+
+    <div class="cmp-profiles__content">
+
+        <h2 class="cmp-profiles__name"
+            data-sly-test="${properties.name}">
+            ${properties.name}
+        </h2>
+
+        <img class="cmp-profiles__image"
+             data-sly-test="${properties.imagePath}"
+             src="${properties.imagePath @ context='uri'}"
+             alt="${properties.name}"
+             loading="lazy"
+             width="120"
+             height="120"
+             style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%;"/>
+
+    </div>
+
+</div>

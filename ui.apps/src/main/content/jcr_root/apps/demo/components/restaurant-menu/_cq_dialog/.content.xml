@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Restaurant Menu"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <menuTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Menu Items"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <restaurantName
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the restaurant name."
+                                                fieldLabel="Restaurant Name"
+                                                name="./restaurantName"
+                                                required="{Boolean}true"/>
+                                            <menuItems
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldDescription="Add each menu item separately."
+                                                fieldLabel="Menu Items">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./menuItems">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <itemName
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Item Name"
+                                                            name="./itemName"
+                                                            required="{Boolean}true"/>
+                                                        <description
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                            fieldLabel="Description"
+                                                            name="./description"/>
+                                                        <price
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                            fieldLabel="Price (₹)"
+                                                            min="{Long}0"
+                                                            name="./price"
+                                                            step="{Long}1"/>
+                                                        <category
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            emptyText="Select a category"
+                                                            fieldLabel="Category"
+                                                            name="./category">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <pizza
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Pizza"
+                                                                    value="pizza"/>
+                                                                <burger
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Burger"
+                                                                    value="burger"/>
+                                                                <biryani
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Biryani"
+                                                                    value="biryani"/>
+                                                                <sushi
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Sushi"
+                                                                    value="sushi"/>
+                                                                <pasta
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Pasta"
+                                                                    value="pasta"/>
+                                                                <sides
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Sides"
+                                                                    value="sides"/>
+                                                                <beverages
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Beverages"
+                                                                    value="beverages"/>
+                                                                <other
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Other"
+                                                                    value="other"/>
+                                                            </items>
+                                                        </category>
+                                                        <imagePath
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldDescription="Select an image from the DAM."
+                                                            fieldLabel="Menu Item Image"
+                                                            filter="hierarchy"
+                                                            name="./imagePath"
+                                                            rootPath="/content/dam"/>
+                                                    </items>
+                                                </field>
+                                            </menuItems>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </menuTab>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

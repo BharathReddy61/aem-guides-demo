@@ -1,0 +1,6 @@
+{
+  "user.mapping": [
+    "aem-guides-demo.core:demo-publish-service=[demo-publish-user]",
+    "aem-guides-demo.core:demo-contact-service=[demo-contact-service-user]"
+  ]
+}

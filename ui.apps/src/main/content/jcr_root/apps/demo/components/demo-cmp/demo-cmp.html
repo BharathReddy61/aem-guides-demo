@@ -1,0 +1,34 @@
+<link rel="stylesheet"
+      href="/apps/demo/components/demo-cmp/demo-cmp.css">
+
+<div class="demo-container">
+    <h1>Employee Details</h1>
+
+    <sly data-sly-use.model="com.adobe.aem.guides.demo.core.models.Demo">
+
+        <div class="demo-card">
+            <h2>Employee Properties</h2>
+
+            <p><strong>Full Name:</strong> ${model.fullname}</p>
+            <p><strong>Number:</strong> ${model.number}</p>
+
+            <div data-sly-list.multi="${model.multifield}">
+                <p><strong>Address:</strong> ${multi.address @ context='html'}</p>
+                <p><strong>Country:</strong> ${multi.country}</p>
+            </div>
+        </div>
+
+        <div class="demo-card">
+            <h2>Contact Details</h2>
+
+            <div data-sly-list.contact="${model.contactDetails}">
+                <p><strong>Contact Person:</strong> ${contact.contactPerson}</p>
+                <p><strong>Email Address:</strong> ${contact.email}</p>
+                <p><strong>Phone Number:</strong> ${contact.phone}</p>
+                <p><strong>Contact Address:</strong> ${contact.address}</p>
+                <p><strong>Country:</strong> ${contact.country}</p>
+            </div>
+        </div>
+
+    </sly>
+</div>

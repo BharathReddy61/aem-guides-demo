@@ -1,0 +1,64 @@
+<sly data-sly-use.model="com.adobe.aem.guides.demo.core.models.SidebarModel"/>
+
+<div class="sidebar-component" data-sly-test="${model.enableSwitch}">
+
+    <header class="sidebar-header">
+        <a data-sly-test="${model.logoLink}" href="${model.logoLink}">
+            <picture>
+                <source data-sly-test="${model.logoMobileImage}"
+                        media="(max-width: 767px)"
+                        srcset="${model.logoMobileImage}"/>
+                <img data-sly-test="${model.logoPath}"
+                     src="${model.logoPath}"
+                     alt="Sidebar Logo"/>
+            </picture>
+        </a>
+
+        <img data-sly-test="${!model.logoLink && model.logoPath}"
+             src="${model.logoPath}"
+             alt="Sidebar Logo"/>
+    </header>
+
+    <nav data-sly-test="${model.headerLinks.size > 0}">
+        <ul>
+            <li data-sly-list.link="${model.headerLinks}">
+                <img data-sly-test="${link.image}"
+                     src="${link.image}"
+                     alt="${link.name}"/>
+                <span>${link.name}</span>
+            </li>
+        </ul>
+    </nav>
+
+    <nav data-sly-test="${model.navigationItems.size > 0}">
+        <ul>
+            <li data-sly-list.navigation="${model.navigationItems}">
+                <img data-sly-test="${navigation.desktopIcon}"
+                     class="desktop-icon"
+                     src="${navigation.desktopIcon}"
+                     alt="Desktop Icon"/>
+
+                <img data-sly-test="${navigation.mobileIcon}"
+                     class="mobile-icon"
+                     src="${navigation.mobileIcon}"
+                     alt="Mobile Icon"/>
+
+                <ul data-sly-test="${navigation.nestedNavigation.size > 0}">
+                    <li data-sly-list.nested="${navigation.nestedNavigation}">
+                        <a href="${nested.navigationURL}">
+                            ${nested.navigationURL}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <p data-sly-test="${model.country}">
+        Country: ${model.country}
+    </p>
+</div>
+
+<div data-sly-test="${!model.enableSwitch}">
+    Sidebar is disabled.
+</div>

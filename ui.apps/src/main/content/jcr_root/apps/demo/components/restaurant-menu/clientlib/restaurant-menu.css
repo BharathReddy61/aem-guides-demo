@@ -1,0 +1,1411 @@
+.food-app {
+    --food-red: #f97316;
+    --food-red-dark: #c2410c;
+    --food-text: #242424;
+    --food-muted: #777;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 24px 70px;
+    color: var(--food-text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.food-app *, .food-cart-drawer * { box-sizing: border-box; }
+
+.food-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 76px;
+    padding: 14px 30px;
+    margin: 0 -24px 26px;
+    background: var(--food-red);
+    color: white;
+}
+.food-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+}
+.food-brand-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 23px;
+    font-weight: 900;
+}
+.food-brand-copy strong, .food-brand-copy small { display: block; }
+.food-brand-copy strong { font-size: 18px; }
+.food-brand-copy small { margin-top: 4px; opacity: .85; font-size: 11px; }
+
+.food-cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 42px;
+    padding: 0 18px;
+    border: 1px solid white;
+    border-radius: 4px;
+    background: white;
+    color: var(--food-red);
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .4px;
+}
+.food-cart-header:hover { background: #fff7ed; }
+.food-cart-badge {
+    display: grid;
+    place-items: center;
+    min-width: 21px;
+    height: 21px;
+    padding: 0 5px;
+    border-radius: 50px;
+    background: var(--food-red);
+    color: white;
+    font-size: 11px;
+}
+.food-main { max-width: 1120px; margin: auto; }
+.food-intro { padding: 12px 0 25px; text-align: center; }
+.food-eyebrow {
+    margin: 0 0 10px;
+    color: var(--food-red);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.food-intro h1 { margin: 0 0 12px; font-size: clamp(30px, 4vw, 42px); }
+.food-intro > p:last-child { color: var(--food-muted); line-height: 1.6; }
+
+.food-menu-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 24px 0 18px;
+}
+.food-menu-heading h2 { margin: 0 0 6px; font-size: 24px; }
+.food-menu-heading p { margin: 0; color: var(--food-muted); font-size: 13px; }
+.food-search {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    width: min(280px, 100%);
+    padding: 0 12px;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    background: white;
+}
+.food-search input {
+    width: 100%;
+    min-width: 0;
+    height: 40px;
+    border: 0;
+    outline: none;
+    font-size: 13px;
+}
+.food-filters { display: flex; flex-wrap: wrap; gap: 9px; margin: 20px 0; }
+.food-filters button {
+    padding: 9px 18px;
+    border: 0;
+    border-radius: 22px;
+    background: #f0f1f3;
+    color: #555;
+    cursor: pointer;
+    font-size: 11px;
+}
+.food-filters button.is-active { background: var(--food-red); color: white; }
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+.food-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #ededed;
+    border-radius: 7px;
+    background: white;
+    box-shadow: 0 3px 9px rgba(0,0,0,.08);
+    transition: transform .18s, box-shadow .18s;
+}
+.food-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
+.food-card-image {
+    position: relative;
+    display: grid;
+    place-items: center;
+    height: 190px;
+    padding: 14px;
+    background: #fff;
+}
+.food-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.food-image-fallback {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background: #faf6f2;
+    font-size: 50px;
+}
+.food-category-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #f1f1f1;
+    color: #555;
+    font-size: 10px;
+    font-weight: 700;
+}
+.food-card-body { padding: 15px; }
+.food-card-body h3 {
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.food-description {
+    display: -webkit-box;
+    min-height: 52px;
+    overflow: hidden;
+    margin: 0 0 15px;
+    color: #777;
+    font-size: 11px;
+    line-height: 1.55;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.food-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 15px;
+}
+.food-price { font-size: 14px; font-weight: 800; white-space: nowrap; }
+.food-select {
+    padding: 7px 15px;
+    border: 1px solid var(--food-red);
+    border-radius: 20px;
+    background: white;
+    color: var(--food-red);
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 800;
+}
+.food-select:hover { background: var(--food-red); color: white; }
+.food-quantity { display: flex; align-items: center; gap: 10px; }
+.food-quantity button, .food-cart-line-controls button {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--food-red);
+    border-radius: 50%;
+    background: white;
+    color: var(--food-red);
+    cursor: pointer;
+    font-size: 17px;
+}
+.food-no-results, .food-empty { padding: 35px; color: var(--food-muted); text-align: center; }
+
+.food-overlay {
+    position: fixed;
+    z-index: 9000;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+}
+.food-cart-drawer {
+    position: fixed;
+    z-index: 9001;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: min(420px, 100vw);
+    height: 100vh;
+    height: 100dvh;
+    padding: 24px;
+    overflow-y: auto;
+    background: white;
+    box-shadow: -10px 0 35px rgba(0,0,0,.2);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.food-cart-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.food-cart-title h2 { margin: 0; font-size: 24px; }
+.food-cart-title h2 span {
+    display: inline-grid;
+    place-items: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 5px;
+    border-radius: 50px;
+    background: #ffedd5;
+    color: var(--food-red);
+    font-size: 12px;
+}
+.food-cart-close {
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: #f2f2f2;
+    cursor: pointer;
+    font-size: 25px;
+}
+.food-cart-lines { flex: 1; }
+.food-cart-line {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    padding: 17px 0;
+    border-bottom: 1px solid #eee;
+}
+.food-cart-line strong { font-size: 13px; }
+.food-cart-line p { margin: 6px 0 0; color: #777; font-size: 12px; }
+.food-cart-line-controls { display: flex; align-items: center; gap: 8px; }
+.food-cart-remove {
+    grid-column: 1 / -1;
+    justify-self: start;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--food-red);
+    cursor: pointer;
+    font-size: 12px;
+}
+.food-cart-empty { padding: 24px 0; color: #777; text-align: center; }
+.food-cart-footer { padding-top: 18px; border-top: 1px solid #eee; }
+.food-subtotal { display: flex; justify-content: space-between; font-size: 16px; }
+.food-cart-note { color: #777; font-size: 11px; line-height: 1.5; }
+.food-checkout {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    border: 0;
+    border-radius: 4px;
+    background: var(--food-red);
+    color: white;
+    cursor: pointer;
+    font-weight: 800;
+}
+.food-checkout:disabled { cursor: not-allowed; opacity: .45; }
+.food-clear {
+    display: block;
+    margin: 12px auto 0;
+    padding: 8px;
+    border: 0;
+    background: none;
+    color: var(--food-red);
+    cursor: pointer;
+}
+body.food-cart-open { overflow: hidden; }
+[hidden] { display: none !important; }
+
+@media (max-width: 850px) {
+    .food-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+    .food-app { padding-right: 14px; padding-left: 14px; }
+    .food-header { margin-right: -14px; margin-left: -14px; padding: 12px 14px; }
+    .food-menu-heading { align-items: stretch; flex-direction: column; }
+    .food-search { width: 100%; }
+    .food-grid { grid-template-columns: 1fr; }
+    .food-card-image { height: 220px; }
+}
+
+
+/* PIZZA_PALACE_ORANGE_THEME_V2 */
+.food-header {
+    background: #f97316 !important;
+}
+.food-header-actions .food-cart-header {
+    color: #c2410c !important;
+}
+.food-cart-badge {
+    background: #c2410c !important;
+}
+[data-food-filter].is-active,
+[data-food-filter].is-active:hover {
+    background: #f97316 !important;
+    color: #fff !important;
+}
+[data-food-add],
+[data-food-increase],
+[data-food-decrease] {
+    border-color: #f97316 !important;
+}
+[data-food-add] {
+    color: #c2410c !important;
+}
+.food-menu-photo {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 14px;
+}
+
+
+/* FOOD MENU IMAGE ALIGNMENT FIX */
+
+/* Keep every menu card the same structure and image height. */
+.food-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 22px;
+}
+
+.food-card {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.food-card-image {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 210px !important;
+    min-height: 210px;
+    flex: 0 0 210px;
+    padding: 0 !important;
+    overflow: hidden;
+    background: #fff7ed;
+}
+
+.food-card-image > img.food-menu-photo,
+.food-card-image > img:not(.food-menu-photo) {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+    object-fit: cover !important;
+    object-position: center;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+.food-card-image .food-image-fallback {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background: #fff7ed;
+}
+
+.food-card-image.has-real-photo .food-image-fallback {
+    display: none !important;
+}
+
+.food-card-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.food-card-footer {
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+.food-category-tag {
+    z-index: 2;
+}
+
+@media (max-width: 850px) {
+    .food-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .food-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .food-card-image {
+        height: 220px !important;
+        min-height: 220px;
+        flex-basis: 220px;
+    }
+}
+
+
+/* FOOD MENU CARD LAYOUT REPAIR V3 */
+
+/* Consistent three-column card layout */
+.restaurant-menu-grid,
+.food-grid,
+.food-menu-grid,
+[data-food-grid] {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    align-items: stretch !important;
+    gap: 24px !important;
+}
+
+/* Cover both original and newly added card structures */
+.restaurant-menu-item,
+.food-card,
+.food-menu-card,
+.menu-item-card,
+[data-food-card] {
+    position: relative;
+    display: flex !important;
+    flex-direction: column !important;
+    align-self: stretch;
+    min-width: 0;
+    height: 100%;
+    min-height: 390px;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 10px;
+}
+
+/* Fixed-height photo container */
+.food-card-image,
+.restaurant-menu-item .food-card-image,
+.food-card-media,
+.food-menu-image,
+.menu-item-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 220px !important;
+    min-height: 220px !important;
+    flex: 0 0 220px;
+    overflow: hidden;
+    padding: 0 !important;
+    background: #fff7ed;
+}
+
+/* All real photos must fill their container, not the whole card */
+.food-card-image img,
+.food-card-media img,
+.food-menu-image img,
+.menu-item-image img,
+.restaurant-menu-item img.food-menu-photo,
+.food-card img.food-menu-photo,
+.food-menu-card img.food-menu-photo,
+.menu-item-card img.food-menu-photo,
+[data-food-card] img.food-menu-photo {
+    display: block;
+    width: 100% !important;
+    height: 220px !important;
+    min-height: 220px !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* Images inserted directly into a card are constrained as well */
+.restaurant-menu-item > img.food-menu-photo,
+.food-card > img.food-menu-photo,
+.food-menu-card > img.food-menu-photo,
+.menu-item-card > img.food-menu-photo,
+[data-food-card] > img.food-menu-photo {
+    width: 100% !important;
+    height: 220px !important;
+    flex: 0 0 220px;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Content and footer stay aligned */
+.restaurant-menu-item > :not(img.food-menu-photo):not(.food-card-image),
+.food-card-body,
+.food-menu-card-body,
+.menu-item-body {
+    box-sizing: border-box;
+}
+
+.food-card-body,
+.food-menu-card-body,
+.menu-item-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.restaurant-menu-item h2,
+.food-card h2,
+.food-menu-card h2,
+.menu-item-card h2 {
+    margin-top: 14px;
+}
+
+.food-card-footer,
+.food-menu-card-footer,
+.menu-item-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+.restaurant-menu-item [data-food-add],
+.food-card [data-food-add],
+.food-menu-card [data-food-add],
+.menu-item-card [data-food-add] {
+    flex-shrink: 0;
+}
+
+/* Orange accent */
+[data-food-filter].is-active,
+[data-food-filter].is-active:hover {
+    background-color: #f97316 !important;
+    color: #fff !important;
+}
+
+.food-header {
+    background-color: #f97316 !important;
+}
+
+.food-cart-badge {
+    background-color: #c2410c !important;
+}
+
+@media (max-width: 900px) {
+    .restaurant-menu-grid,
+    .food-grid,
+    .food-menu-grid,
+    [data-food-grid] {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 580px) {
+    .restaurant-menu-grid,
+    .food-grid,
+    .food-menu-grid,
+    [data-food-grid] {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+}
+
+
+/* TARGETED FOOD CARD FIX V4 */
+
+/* Actual rendered card classes from restaurant-menu.html */
+.food-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    align-items: stretch !important;
+    gap: 24px !important;
+}
+
+.food-card {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    min-height: 390px;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+.food-card-image {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: 220px !important;
+    min-height: 220px !important;
+    flex: 0 0 220px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    background: #fff7ed !important;
+}
+
+.food-card-image img,
+.food-card-image img.food-menu-photo {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: 220px !important;
+    min-height: 220px !important;
+    max-height: 220px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+.food-card-body {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-direction: column !important;
+    min-width: 0;
+    padding: 16px !important;
+}
+
+.food-card-body h3 {
+    margin: 12px 0 !important;
+}
+
+.food-card-footer {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    margin-top: auto !important;
+    padding-top: 16px !important;
+}
+
+.food-card-footer button {
+    flex-shrink: 0;
+}
+
+.food-card [hidden] {
+    display: none !important;
+}
+
+@media (max-width: 900px) {
+    .food-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 580px) {
+    .food-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+}
+
+
+/* FOOD CARD NAME POSITION FIX */
+
+/* Force the card to stack image and content vertically */
+.food-app .food-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    align-items: stretch !important;
+    gap: 24px !important;
+}
+
+.food-app .food-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    height: auto !important;
+    min-height: 400px !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+/* Image must occupy its own row */
+.food-app .food-card > .food-card-image {
+    position: relative !important;
+    inset: auto !important;
+    order: 1 !important;
+    display: block !important;
+    flex: 0 0 220px !important;
+    width: 100% !important;
+    height: 220px !important;
+    min-height: 220px !important;
+    max-height: 220px !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 1 !important;
+}
+
+/* Keep image pixels inside the image row */
+.food-app .food-card > .food-card-image img,
+.food-app .food-card > .food-card-image img.food-menu-photo {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 1 !important;
+}
+
+/* Dish name and details are in a separate row below the image */
+.food-app .food-card > .food-card-body {
+    position: relative !important;
+    inset: auto !important;
+    order: 2 !important;
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 170px !important;
+    overflow: visible !important;
+    padding: 16px !important;
+    margin: 0 !important;
+    background: #fff !important;
+    z-index: 2 !important;
+    box-sizing: border-box !important;
+}
+
+/* Prevent heading text from being hidden or pushed behind the image */
+.food-app .food-card .food-card-body h3 {
+    position: relative !important;
+    display: block !important;
+    order: 1 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 24px !important;
+    overflow: visible !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 8px 0 14px !important;
+    padding: 0 !important;
+    color: #242424 !important;
+    line-height: 1.4 !important;
+    overflow-wrap: anywhere;
+    z-index: 3 !important;
+}
+
+/* Description stays under the title */
+.food-app .food-card .food-card-body p {
+    position: relative !important;
+    display: block !important;
+    height: auto !important;
+    line-height: 1.5 !important;
+    margin: 0 0 12px !important;
+    overflow-wrap: anywhere;
+}
+
+/* Price and Select button share the bottom row */
+.food-app .food-card > .food-card-body .food-card-footer {
+    position: relative !important;
+    order: 10 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: auto 0 0 !important;
+    padding: 12px 0 0 !important;
+    background: #fff !important;
+    z-index: 3 !important;
+}
+
+.food-app .food-card .food-card-footer button {
+    position: relative !important;
+    flex: 0 0 auto !important;
+    z-index: 4 !important;
+}
+
+.food-app .food-card [hidden] {
+    display: none !important;
+}
+
+@media (max-width: 900px) {
+    .food-app .food-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 580px) {
+    .food-app .food-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+}
+
+
+/* FOOD IMAGE INSET FIX V1 */
+
+/* Give the image area space around the food photograph */
+.food-app .food-card-image {
+    height: 190px !important;
+    min-height: 190px !important;
+    max-height: 190px !important;
+    flex: 0 0 190px !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    background: #fff7ed !important;
+    position: relative !important;
+}
+
+/* Shrink the photograph on every side */
+.food-app .food-card-image img,
+.food-app .food-card-image img.food-menu-photo {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+}
+
+/* Keep the placeholder inside the same inset area */
+.food-app .food-card-image .food-image-fallback {
+    position: absolute !important;
+    inset: 12px !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 8px !important;
+}
+
+/* Preserve spacing between image and dish name */
+.food-app .food-card-body {
+    position: relative !important;
+    padding: 14px 16px 16px !important;
+    margin: 0 !important;
+    background: #fff !important;
+}
+
+.food-app .food-card-body h3 {
+    margin-top: 4px !important;
+}
+
+@media (max-width: 580px) {
+    .food-app .food-card-image {
+        height: 190px !important;
+        min-height: 190px !important;
+        flex-basis: 190px !important;
+    }
+}
+
+
+
+/* ===== AUTOMATIC RESTAURANT MENU GAP FIX ===== */
+.food-app {
+    margin-bottom: 0 !important;
+}
+
+/* Avoid extra bottom spacing on the menu component's final content. */
+.food-app > :last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Keep menu content from adding unnecessary bottom space. */
+.food-app main,
+.food-app .food-grid,
+.food-app .food-restaurant-track {
+    margin-bottom: 0 !important;
+}
+
+/* The AEM footer may be a sibling component.
+   Remove only its top margin when it immediately follows food-app. */
+.food-app + footer,
+.food-app + .footer,
+.food-app + .food-footer {
+    margin-top: 0 !important;
+}
+/* ===== END RESTAURANT MENU GAP FIX ===== */
+
+
+
+/* ===== AUTOMATIC GAP REDUCTION ===== */
+.food-app {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+
+.food-app .food-header {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Reduce excess space above the restaurant/cart bar. */
+.food-app .restaurant-banner,
+.food-app .restaurant-header,
+.food-app .restaurant-bar,
+.food-app .restaurant-title-bar,
+.food-app .cart-header,
+.food-app .menu-header {
+    margin-top: 0 !important;
+}
+
+/* Keep the menu content compact without changing card styling. */
+.food-app .menu-hero {
+    margin-top: 12px !important;
+}
+
+.food-app .menu-section {
+    margin-top: 0 !important;
+}
+
+/* ===== END AUTOMATIC GAP REDUCTION ===== */
+
+
+
+/* ===== FINAL FOODAPP VERTICAL GAP FIX ===== */
+.food-app .food-header {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Remove the large top margin on the element immediately after navigation. */
+.food-app .food-header + * {
+    margin-top: 0 !important;
+}
+
+/* Tighten the restaurant/cart bar and the heading beneath it. */
+.food-app [class*="restaurant-header"],
+.food-app [class*="restaurant-banner"],
+.food-app [class*="restaurant-bar"],
+.food-app [class*="cart-header"],
+.food-app [class*="title-bar"] {
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+}
+
+/* Reduce the gap before the restaurant introduction. */
+.food-app [class*="hero"],
+.food-app [class*="intro"] {
+    margin-top: 0 !important;
+    padding-top: 8px !important;
+}
+
+/* Keep the outer component from adding vertical space. */
+.food-app {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* ===== END FINAL FOODAPP VERTICAL GAP FIX ===== */
+
+
+
+/* ===== TARGETED RESTAURANT MENU TOP GAP FIX ===== */
+.food-app {
+    margin-top: -65px !important;
+}
+
+.food-app .food-header {
+    margin-bottom: 12px !important;
+}
+/* ===== END TARGETED RESTAURANT MENU TOP GAP FIX ===== */
+
+/* FOODAPP-HOME-THEME-OVERRIDES */
+
+/*
+ * Match the FoodApp home page theme.
+ * These rules are scoped to restaurant-menu classes.
+ * No data, navigation, or JavaScript behavior is changed.
+ */
+
+.restaurant-menu {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: #182230;
+    font-family: Arial, sans-serif;
+}
+
+.restaurant-menu,
+.restaurant-menu * {
+    box-sizing: border-box;
+}
+
+/* Restaurant title */
+
+.restaurant-menu .restaurant-menu__header {
+    margin: 26px 0 36px;
+    padding: 30px 20px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.restaurant-menu .restaurant-menu__eyebrow {
+    color: #ff5a1f;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.restaurant-menu .restaurant-menu__header h1 {
+    margin: 12px 0;
+    color: #182230;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 700;
+}
+
+.restaurant-menu .restaurant-menu__header p {
+    color: #697386;
+    line-height: 1.6;
+}
+
+/* Menu cards */
+
+.restaurant-menu .restaurant-menu__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.restaurant-menu .restaurant-menu__card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #e8eaf0;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 4px 14px #1720330d;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.restaurant-menu .restaurant-menu__card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px #17203318;
+}
+
+.restaurant-menu .restaurant-menu__image {
+    display: block;
+    width: 100%;
+    height: 187px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.restaurant-menu .restaurant-menu__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.restaurant-menu .restaurant-menu__category {
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #fff0e8;
+    color: #ff5a1f;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.restaurant-menu .restaurant-menu__content h2 {
+    margin: 0 0 8px;
+    color: #182230;
+    font-size: 21px;
+}
+
+.restaurant-menu .restaurant-menu__description {
+    color: #697386;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.restaurant-menu .restaurant-menu__price {
+    margin-top: auto;
+    padding-top: 12px;
+    color: #ff5a1f;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.restaurant-menu .restaurant-menu__empty {
+    padding: 30px;
+    color: #697386;
+    text-align: center;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .restaurant-menu .restaurant-menu__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .restaurant-menu {
+        padding: 12px;
+    }
+
+    .restaurant-menu .restaurant-menu__header {
+        margin: 20px 0 26px;
+        padding: 20px 8px;
+    }
+
+    .restaurant-menu .restaurant-menu__header h1 {
+        font-size: 30px;
+    }
+
+    .restaurant-menu .restaurant-menu__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .restaurant-menu .restaurant-menu__image {
+        height: 200px;
+    }
+}
+
+/* =========================================
+   FoodApp Home Page-Inspired Menu Styling
+   Applies to all restaurant menu pages
+   ========================================= */
+
+.food-app {
+    --food-red: #ff5a1f;
+    --food-red-dark: #ed4814;
+    --food-text: #182230;
+    --food-muted: #697386;
+
+    color: var(--food-text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Menu introduction */
+.food-app .food-intro {
+    padding: 24px 20px 30px;
+    text-align: center;
+}
+
+.food-app .food-intro h1 {
+    margin: 0 0 12px;
+    color: #182230;
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.food-app .food-eyebrow {
+    color: #ff5a1f;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Menu section heading */
+.food-app .food-menu-heading {
+    margin: 24px 0 20px;
+    gap: 20px;
+}
+
+.food-app .food-menu-heading h2 {
+    color: #182230;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+/* Menu grid */
+.food-app .food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+/* Menu cards: match the home page's rounded-card appearance */
+.food-app .food-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+
+    border: 1px solid #e8eaf0;
+    border-radius: 14px;
+    background: #fff;
+
+    box-shadow: 0 4px 14px rgba(23, 32, 51, 0.06);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.food-app .food-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(23, 32, 51, 0.12);
+}
+
+/* Food images */
+.food-app .food-card-image {
+    position: relative;
+    display: grid;
+    place-items: center;
+
+    height: 190px;
+    min-height: 190px;
+    padding: 12px;
+    overflow: hidden;
+
+    background: #fff;
+}
+
+.food-app .food-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.25s ease;
+}
+
+.food-app .food-card:hover .food-card-image img {
+    transform: scale(1.04);
+}
+
+/* Category label */
+.food-app .food-category-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+
+    padding: 5px 10px;
+    border-radius: 20px;
+
+    background: #fff;
+    color: #182230;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* Menu card content */
+.food-app .food-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.food-app .food-card-body h3 {
+    margin: 0 0 10px;
+    color: #182230;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.food-app .food-description {
+    color: #697386;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Price and action area */
+.food-app .food-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+.food-app .food-price {
+    color: #182230;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+/* Select and quantity controls */
+.food-app .food-select {
+    border: 1px solid #ff5a1f;
+    border-radius: 8px;
+    background: #fff;
+    color: #ff5a1f;
+    font-weight: 700;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.food-app .food-select:hover {
+    background: #ff5a1f;
+    color: #fff;
+}
+
+.food-app .food-quantity button,
+.food-app .food-cart-line-controls button {
+    border-color: #ff5a1f;
+    color: #ff5a1f;
+}
+
+.food-app .food-quantity button:hover,
+.food-app .food-cart-line-controls button:hover {
+    background: #ff5a1f;
+    color: #fff;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+    .food-app .food-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+    .food-app {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .food-app .food-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .food-app .food-card-image {
+        height: 200px;
+        min-height: 200px;
+    }
+
+    .food-app .food-card-body {
+        padding: 15px;
+    }
+}

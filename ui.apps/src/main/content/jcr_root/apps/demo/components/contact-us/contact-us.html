@@ -1,0 +1,78 @@
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='demo.contact-us'}"/>
+
+<section class="contact-us" data-contact-component>
+    <div class="contact-us__container">
+
+        <div class="contact-us__heading">
+            <h2>Contact Management</h2>
+            <p>Create, view, edit and delete contact records.</p>
+        </div>
+
+        <form class="contact-us__form" data-contact-form>
+            <input type="hidden" name="id" data-contact-id>
+
+            <div class="contact-us__field">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" type="text" name="name"
+                       placeholder="Enter your name"
+                       maxlength="100" required>
+            </div>
+
+            <div class="contact-us__field">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" type="email" name="email"
+                       placeholder="Enter your email"
+                       maxlength="254" required>
+            </div>
+
+            <div class="contact-us__field">
+                <label for="contact-mobile">Mobile</label>
+                <input id="contact-mobile" type="tel" name="mobile"
+                       placeholder="Enter your mobile number"
+                       maxlength="15" required>
+            </div>
+
+            <div class="contact-us__actions">
+                <button type="submit" data-submit-button>
+                    Save Contact
+                </button>
+
+                <button type="button" data-cancel-edit hidden>
+                    Cancel Edit
+                </button>
+            </div>
+
+            <p class="contact-us__message"
+               data-contact-message
+               role="status"
+               aria-live="polite"></p>
+        </form>
+
+        <div class="contact-us__records">
+            <h3>Contact Records</h3>
+
+            <div class="contact-us__table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody data-contact-table-body>
+                        <tr>
+                            <td colspan="4">
+                                Contact records will appear here.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</section>

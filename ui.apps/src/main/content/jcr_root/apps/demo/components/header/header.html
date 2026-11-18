@@ -1,0 +1,31 @@
+<sly data-sly-use.model="com.adobe.aem.guides.demo.core.models.HeaderModel">
+
+    <header class="header-component" data-sly-test="${model.showHeader}">
+        <h1>
+            <a data-sly-test="${model.linkPath}"
+               href="${model.linkPath @ context='uri'}">${model.title}</a>
+
+            <span data-sly-test="${!model.linkPath}">
+                ${model.title}
+            </span>
+        </h1>
+
+        <div class="header-items" data-sly-list.item="${model.items}">
+            <div class="header-item">
+                <p data-sly-test="${item.itemText}">
+                    ${item.itemText}
+                </p>
+
+                <p data-sly-test="${item.formattedDate}">
+                    Date: ${item.formattedDate}
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-disabled-placeholder"
+         data-sly-test="${!model.showHeader}">
+        Header component is disabled.
+    </div>
+
+</sly>

@@ -1,0 +1,12 @@
+{
+  "scripts": [
+    "create service user wordpress-migration-service",
+    "set ACL for wordpress-migration-service",
+    "    allow jcr:read on /conf/demo",
+    "    allow jcr:read on /content/dam/demo",
+    "    allow jcr:read on /content/dam/demo/wordpress-migration",
+    "    allow jcr:addChildNodes on /content/dam/demo/wordpress-migration",
+    "    allow jcr:modifyProperties on /content/dam/demo/wordpress-migration",
+    "end"
+  ]
+}

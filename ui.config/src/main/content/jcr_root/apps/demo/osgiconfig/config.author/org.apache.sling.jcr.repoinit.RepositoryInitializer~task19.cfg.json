@@ -1,0 +1,11 @@
+{
+  "scripts": [
+    "create service user demo-task19-user with path system/cq:services/demo",
+    "create path (sling:Folder) /conf/region-tree",
+       "set principal ACL for demo-task19-user",
+   "    allow jcr:read on /conf",
+   "    allow jcr:addChildNodes on /conf",
+   "    allow jcr:addChildNodes,jcr:removeNode,jcr:removeChildNodes,jcr:modifyProperties on /conf/region-tree",
+   "end"
+  ]
+}

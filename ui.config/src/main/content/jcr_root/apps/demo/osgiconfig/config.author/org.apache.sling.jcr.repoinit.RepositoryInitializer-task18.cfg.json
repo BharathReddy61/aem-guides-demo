@@ -1,0 +1,8 @@
+{
+  "scripts": [
+    "create service user demo-task18-user with path system/cq:services/demo",
+    "set ACL for demo-task18-user",
+    "    allow jcr:read,crx:replicate on /content/dam/demo",
+    "end"
+  ]
+}

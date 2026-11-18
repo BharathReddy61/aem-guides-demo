@@ -1,0 +1,8 @@
+{
+  "resource.paths": [
+    "/content/dam/demo"
+  ],
+  "resource.change.types": [
+    "CHANGED"
+  ]
+}

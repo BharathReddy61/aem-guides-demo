@@ -1,0 +1,1129 @@
+
+<!-- RESTAURANT_MENU_INLINE_CSS -->
+<style>
+
+
+/* ===== FINAL FOODAPP VERTICAL GAP FIX ===== */
+.food-app .food-header {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Remove the large top margin on the element immediately after navigation. */
+.food-app .food-header + * {
+    margin-top: 0 !important;
+}
+
+/* Tighten the restaurant/cart bar and the heading beneath it. */
+.food-app [class*="restaurant-header"],
+.food-app [class*="restaurant-banner"],
+.food-app [class*="restaurant-bar"],
+.food-app [class*="cart-header"],
+.food-app [class*="title-bar"] {
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+}
+
+/* Reduce the gap before the restaurant introduction. */
+.food-app [class*="hero"],
+.food-app [class*="intro"] {
+    margin-top: 0 !important;
+    padding-top: 8px !important;
+}
+
+/* Keep the outer component from adding vertical space. */
+.food-app {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* ===== END FINAL FOODAPP VERTICAL GAP FIX ===== */
+
+
+/* ===== AUTOMATIC GAP REDUCTION ===== */
+.food-app {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+
+.food-app .food-header {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.food-app .restaurant-banner,
+.food-app .restaurant-header,
+.food-app .restaurant-bar,
+.food-app .restaurant-title-bar,
+.food-app .cart-header,
+.food-app .menu-header {
+    margin-top: 0 !important;
+}
+/* ===== END AUTOMATIC GAP REDUCTION ===== */
+
+
+.food-app {
+    --food-red: #ff5a1f;
+    --food-red-dark: #e94812;
+    --food-text: #242424;
+    --food-muted: #777;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 24px 70px;
+    color: var(--food-text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.food-app *, .food-cart-drawer * { box-sizing: border-box; }
+
+.food-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 76px;
+    padding: 14px 30px;
+    margin: 0 -24px 26px;
+    background: var(--food-red);
+    color: white;
+}
+.food-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+}
+.food-brand-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 23px;
+    font-weight: 900;
+}
+.food-brand-copy strong, .food-brand-copy small { display: block; }
+.food-brand-copy strong { font-size: 18px; }
+.food-brand-copy small { margin-top: 4px; opacity: .85; font-size: 11px; }
+
+.food-cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 42px;
+    padding: 0 18px;
+    border: 1px solid white;
+    border-radius: 4px;
+    background: white;
+    color: var(--food-red);
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .4px;
+}
+.food-cart-header:hover { background: #fff0e8; }
+.food-cart-badge {
+    display: grid;
+    place-items: center;
+    min-width: 21px;
+    height: 21px;
+    padding: 0 5px;
+    border-radius: 50px;
+    background: var(--food-red);
+    color: white;
+    font-size: 11px;
+}
+.food-main { max-width: 1120px; margin: auto; }
+.food-intro { padding: 12px 0 25px; text-align: center; }
+.food-eyebrow {
+    margin: 0 0 10px;
+    color: var(--food-red);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.food-intro h1 { margin: 0 0 12px; font-size: clamp(30px, 4vw, 42px); }
+.food-intro > p:last-child { color: var(--food-muted); line-height: 1.6; }
+
+.food-menu-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 24px 0 18px;
+}
+.food-menu-heading h2 { margin: 0 0 6px; font-size: 24px; }
+.food-menu-heading p { margin: 0; color: var(--food-muted); font-size: 13px; }
+.food-search {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    width: min(280px, 100%);
+    padding: 0 12px;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    background: white;
+}
+.food-search input {
+    width: 100%;
+    min-width: 0;
+    height: 40px;
+    border: 0;
+    outline: none;
+    font-size: 13px;
+}
+.food-filters { display: flex; flex-wrap: wrap; gap: 9px; margin: 20px 0; }
+.food-filters button {
+    padding: 9px 18px;
+    border: 0;
+    border-radius: 22px;
+    background: #f0f1f3;
+    color: #555;
+    cursor: pointer;
+    font-size: 11px;
+}
+.food-filters button.is-active { background: var(--food-red); color: white; }
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+.food-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #ededed;
+    border-radius: 7px;
+    background: white;
+    box-shadow: 0 3px 9px rgba(0,0,0,.08);
+    transition: transform .18s, box-shadow .18s;
+}
+.food-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
+.food-card-image {
+    position: relative;
+    display: grid;
+    place-items: center;
+    height: 190px;
+    padding: 14px;
+    background: #fff;
+}
+.food-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.food-image-fallback {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background: #faf6f2;
+    font-size: 50px;
+}
+.food-category-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #f1f1f1;
+    color: #555;
+    font-size: 10px;
+    font-weight: 700;
+}
+.food-card-body { padding: 15px; }
+.food-card-body h3 {
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.food-description {
+    display: -webkit-box;
+    min-height: 52px;
+    overflow: hidden;
+    margin: 0 0 15px;
+    color: #777;
+    font-size: 11px;
+    line-height: 1.55;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.food-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 15px;
+}
+.food-price { font-size: 14px; font-weight: 800; white-space: nowrap; }
+.food-select {
+    padding: 7px 15px;
+    border: 1px solid var(--food-red);
+    border-radius: 20px;
+    background: white;
+    color: var(--food-red);
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 800;
+}
+.food-select:hover { background: var(--food-red); color: white; }
+.food-quantity { display: flex; align-items: center; gap: 10px; }
+.food-quantity button, .food-cart-line-controls button {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--food-red);
+    border-radius: 50%;
+    background: white;
+    color: var(--food-red);
+    cursor: pointer;
+    font-size: 17px;
+}
+.food-no-results, .food-empty { padding: 35px; color: var(--food-muted); text-align: center; }
+
+.food-overlay {
+    position: fixed;
+    z-index: 9000;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+}
+.food-cart-drawer {
+    position: fixed;
+    z-index: 9001;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: min(420px, 100vw);
+    height: 100vh;
+    height: 100dvh;
+    padding: 24px;
+    overflow-y: auto;
+    background: white;
+    box-shadow: -10px 0 35px rgba(0,0,0,.2);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.food-cart-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.food-cart-title h2 { margin: 0; font-size: 24px; }
+.food-cart-title h2 span {
+    display: inline-grid;
+    place-items: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 5px;
+    border-radius: 50px;
+    background: #ffd1b8;
+    color: var(--food-red);
+    font-size: 12px;
+}
+.food-cart-close {
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: #f2f2f2;
+    cursor: pointer;
+    font-size: 25px;
+}
+.food-cart-lines { flex: 1; }
+.food-cart-line {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    padding: 17px 0;
+    border-bottom: 1px solid #eee;
+}
+.food-cart-line strong { font-size: 13px; }
+.food-cart-line p { margin: 6px 0 0; color: #777; font-size: 12px; }
+.food-cart-line-controls { display: flex; align-items: center; gap: 8px; }
+.food-cart-remove {
+    grid-column: 1 / -1;
+    justify-self: start;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--food-red);
+    cursor: pointer;
+    font-size: 12px;
+}
+.food-cart-empty { padding: 24px 0; color: #777; text-align: center; }
+.food-cart-footer { padding-top: 18px; border-top: 1px solid #eee; }
+.food-subtotal { display: flex; justify-content: space-between; font-size: 16px; }
+.food-cart-note { color: #777; font-size: 11px; line-height: 1.5; }
+.food-checkout {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    border: 0;
+    border-radius: 4px;
+    background: var(--food-red);
+    color: white;
+    cursor: pointer;
+    font-weight: 800;
+}
+.food-checkout:disabled { cursor: not-allowed; opacity: .45; }
+.food-clear {
+    display: block;
+    margin: 12px auto 0;
+    padding: 8px;
+    border: 0;
+    background: none;
+    color: var(--food-red);
+    cursor: pointer;
+}
+body.food-cart-open { overflow: hidden; }
+[hidden] { display: none !important; }
+
+@media (max-width: 850px) {
+    .food-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+    .food-app { padding-right: 14px; padding-left: 14px; }
+    .food-header { margin-right: -14px; margin-left: -14px; padding: 12px 14px; }
+    .food-menu-heading { align-items: stretch; flex-direction: column; }
+    .food-search { width: 100%; }
+    .food-grid { grid-template-columns: 1fr; }
+    .food-card-image { height: 220px; }
+}
+
+
+/* FINAL FOOD IMAGE SIZE FIX V5 */
+
+/* Make every menu image smaller on all four sides */
+.food-app .food-grid .food-card .food-card-image {
+    height: 220px !important;
+    min-height: 220px !important;
+    max-height: 220px !important;
+    box-sizing: border-box !important;
+    padding: 14px !important;
+    overflow: hidden !important;
+    background: #fff7ed !important;
+    position: relative !important;
+    display: block !important;
+}
+
+/* Keep the actual photo inside the padded image area */
+.food-app .food-grid .food-card .food-card-image img,
+.food-app .food-grid .food-card .food-card-image img.food-menu-photo {
+    position: absolute !important;
+    top: 14px !important;
+    right: 14px !important;
+    bottom: 14px !important;
+    left: 14px !important;
+    width: calc(100% - 28px) !important;
+    height: calc(100% - 28px) !important;
+    max-width: calc(100% - 28px) !important;
+    max-height: calc(100% - 28px) !important;
+    display: block !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+}
+
+/* Prevent the fallback image placeholder from covering the photo */
+.food-app .food-grid .food-card .food-card-image .food-image-fallback {
+    inset: 14px !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+}
+
+/* Keep the description and controls working as before */
+.food-app .food-grid .food-card .food-card-body {
+    position: relative !important;
+    flex: 1 1 auto !important;
+    min-height: 130px !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 580px) {
+    .food-app .food-grid .food-card .food-card-image {
+        height: 190px !important;
+        min-height: 190px !important;
+        max-height: 190px !important;
+    }
+}
+
+</style>
+
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+
+<sly data-sly-use.menu="com.adobe.aem.guides.demo.core.models.RestaurantMenuModel"/>
+
+<div class="food-app">
+
+    
+<header class="food-header">
+    <div class="food-brand">
+        <strong>${menu.restaurantName}</strong>
+    </div>
+    <div class="food-header-actions">
+        <button type="button" class="food-cart-header"
+                data-cart-toggle aria-expanded="false">
+            <span aria-hidden="true">🛒</span>
+            <span>MY CART</span>
+            <span class="food-cart-badge" data-cart-count>0</span>
+        </button>
+    </div>
+</header>
+
+
+    <main class="food-main">
+        <section class="food-intro">
+            <p class="food-eyebrow">FRESHLY PREPARED FOR YOU</p>
+            <h1>${menu.restaurantName}</h1>
+            <p>Discover your favourites and order something delicious.</p>
+        </section>
+
+        <section data-sly-test="${menu.menuItems.size > 0}">
+            <div class="food-menu-heading">
+                <div>
+                    <h2>Explore Our Menu</h2>
+                    <p>Find something delicious today.</p>
+                </div>
+                <label class="food-search">
+                    <span aria-hidden="true">⌕</span>
+                    <input type="search" data-food-search
+                           placeholder="Search dishes..."
+                           aria-label="Search dishes"/>
+                </label>
+            </div>
+
+            <nav class="food-filters" aria-label="Menu categories">
+                <button type="button" class="is-active"
+                        data-food-filter="all">All</button>
+                <button type="button"
+                        data-food-filter="burger">Burger</button>
+                <button type="button"
+                        data-food-filter="pizza">Pizza</button>
+                <button type="button"
+                        data-food-filter="dessert">Dessert</button>
+                <button type="button"
+                        data-food-filter="other">Other</button>
+            </nav>
+
+            <div class="food-grid" data-sly-list.item="${menu.menuItems}">
+                <article class="food-card"
+                         data-food-card
+                         data-item-id="${resource.path}-${itemList.index}"
+                         data-item-name="${item.itemName}"
+                         data-item-price="${item.price}"
+                         data-item-category="${item.category}">
+
+                    <div class="food-card-image">
+                        <img data-sly-test="${item.imagePath}"
+                             src="${item.imagePath @ context='uri'}"
+                             alt="${item.itemName}"
+                             loading="lazy"/>
+                        <img data-sly-test="${!item.imagePath && item.image}"
+                             src="${item.image @ context='uri'}"
+                             alt="${item.itemName}"
+                             loading="lazy"/>
+                        <div class="food-image-fallback"
+                             data-sly-test="${!item.imagePath && !item.image}">
+                            <span aria-hidden="true">🍽️</span>
+                        </div>
+
+                        <span class="food-category-tag"
+                              data-sly-test="${item.category}">
+                            ${item.category}
+                        </span>
+                    </div>
+
+                    <div class="food-card-body">
+                        <h3>${item.itemName}</h3>
+                        <p class="food-description"
+                           data-sly-test="${item.description}">
+                            ${item.description}
+                        </p>
+
+                        <div class="food-card-footer">
+                            <strong class="food-price"
+                                    data-sly-test="${item.price}">
+                                ₹${item.price}
+                            </strong>
+
+                            <button type="button" class="food-select"
+                                    data-food-add>
+                                SELECT <span aria-hidden="true">+</span>
+                            </button>
+
+                            <div class="food-quantity"
+                                 data-food-quantity-control hidden>
+                                <button type="button" data-food-decrease
+                                        aria-label="Decrease quantity">−</button>
+                                <span data-food-quantity>1</span>
+                                <button type="button" data-food-increase
+                                        aria-label="Increase quantity">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <p class="food-no-results" data-food-no-results hidden>
+                No dishes found. Try another search.
+            </p>
+        </section>
+
+        <section class="food-empty"
+                 data-sly-test="${!menu.menuItems || menu.menuItems.size == 0}">
+            <h2>Menu coming soon</h2>
+            <p>Please check back for available dishes.</p>
+        </section>
+    </main>
+
+    <div class="food-overlay" data-food-overlay hidden></div>
+
+    <aside class="food-cart-drawer" data-food-cart
+           aria-label="Shopping cart" aria-hidden="true" hidden>
+        <header class="food-cart-title">
+            <div>
+                <p class="food-eyebrow">YOUR SELECTION</p>
+                <h2>Your Cart <span data-food-cart-count>0</span></h2>
+            </div>
+            <button type="button" class="food-cart-close"
+                    data-food-close aria-label="Close cart">×</button>
+        </header>
+
+        <div class="food-cart-lines" data-food-cart-lines></div>
+
+        <p class="food-cart-empty" data-food-cart-empty>
+            Your cart is empty. Select a dish to get started.
+        </p>
+
+        <footer class="food-cart-footer">
+            <div class="food-subtotal">
+                <span>Subtotal</span>
+                <strong data-food-total>₹0.00</strong>
+            </div>
+            <p class="food-cart-note">
+                Delivery charges, if applicable, are not included.
+            </p>
+            <button type="button" class="food-checkout"
+                    data-food-checkout disabled>
+                Continue
+            </button>
+            <button type="button" class="food-clear"
+                    data-food-clear>Clear cart</button>
+        </footer>
+    </aside>
+
+</div>
+
+
+<!-- RESTAURANT_MENU_INTERACTION_SCRIPT -->
+<script>
+
+(() => {
+    const KEY = "demo.restaurantMenu.cart.v3";
+    const $ = (s, root = document) => root.querySelector(s);
+    const $$ = (s, root = document) => [...root.querySelectorAll(s)];
+    const money = n => "₹" + Number(n).toFixed(2);
+
+    let cart = {};
+    try {
+        cart = JSON.parse(localStorage.getItem(KEY) || "{}") || {};
+    } catch (e) {
+        cart = {};
+    }
+
+    function save() {
+        try {
+            localStorage.setItem(KEY, JSON.stringify(cart));
+        } catch (e) {
+            console.warn("Cart could not be saved in browser storage.");
+        }
+        render();
+    }
+
+    function openCart() {
+        const panel = $("[data-food-cart]");
+        const overlay = $("[data-food-overlay]");
+        if (!panel || !overlay) {
+            console.error("Cart panel or overlay is missing from HTL.");
+            return;
+        }
+        panel.hidden = false;
+        overlay.hidden = false;
+        panel.setAttribute("aria-hidden", "false");
+        $$("[data-cart-toggle]").forEach(b =>
+            b.setAttribute("aria-expanded", "true"));
+        document.body.classList.add("food-cart-open");
+    }
+
+    function closeCart() {
+        const panel = $("[data-food-cart]");
+        const overlay = $("[data-food-overlay]");
+        if (panel) {
+            panel.hidden = true;
+            panel.setAttribute("aria-hidden", "true");
+        }
+        if (overlay) overlay.hidden = true;
+        $$("[data-cart-toggle]").forEach(b =>
+            b.setAttribute("aria-expanded", "false"));
+        document.body.classList.remove("food-cart-open");
+    }
+
+    function render() {
+        const entries = Object.entries(cart).filter(
+            ([, item]) => item && item.quantity > 0
+        );
+        const count = entries.reduce((n, [, item]) => n + item.quantity, 0);
+        const total = entries.reduce(
+            (n, [, item]) => n + item.price * item.quantity, 0
+        );
+
+        $$("[data-cart-count], [data-food-cart-count]").forEach(
+            el => el.textContent = count
+        );
+
+        const totalEl = $("[data-food-total]");
+        if (totalEl) totalEl.textContent = money(total);
+
+        const lines = $("[data-food-cart-lines]");
+        if (lines) {
+            lines.replaceChildren();
+
+            entries.forEach(([id, item]) => {
+                const row = document.createElement("div");
+                row.className = "food-cart-line";
+
+                const info = document.createElement("div");
+                const name = document.createElement("strong");
+                name.textContent = item.name;
+
+                const price = document.createElement("p");
+                price.textContent =
+                    money(item.price) + " each · " + money(item.price * item.quantity) + " total";
+                info.append(name, price);
+
+                const controls = document.createElement("div");
+                controls.className = "food-cart-line-controls";
+
+                const minus = document.createElement("button");
+                minus.type = "button";
+                minus.textContent = "−";
+                minus.dataset.foodDrawerDecrease = id;
+                minus.setAttribute("aria-label", "Decrease quantity");
+
+                const qty = document.createElement("span");
+                qty.textContent = item.quantity;
+
+                const plus = document.createElement("button");
+                plus.type = "button";
+                plus.textContent = "+";
+                plus.dataset.foodDrawerIncrease = id;
+                plus.setAttribute("aria-label", "Increase quantity");
+
+                controls.append(minus, qty, plus);
+
+                const remove = document.createElement("button");
+                remove.type = "button";
+                remove.className = "food-cart-remove";
+                remove.textContent = "Remove";
+                remove.dataset.foodRemove = id;
+
+                row.append(info, controls, remove);
+                lines.append(row);
+            });
+        }
+
+        const empty = $("[data-food-cart-empty]");
+        if (empty) empty.hidden = count > 0;
+
+        const checkout = $("[data-food-checkout]");
+        if (checkout) checkout.disabled = count === 0;
+
+        $$("[data-food-card]").forEach(card => {
+            const qty = cart[card.dataset.itemId]?.quantity || 0;
+            const add = $("[data-food-add]", card);
+            const controls = $("[data-food-quantity-control]", card);
+            const label = $("[data-food-quantity]", card);
+            if (add) add.hidden = qty > 0;
+            if (controls) controls.hidden = qty === 0;
+            if (label) label.textContent = qty || 1;
+        });
+    }
+
+    function change(id, delta) {
+        if (!cart[id]) return;
+        cart[id].quantity += delta;
+        if (cart[id].quantity <= 0) delete cart[id];
+        save();
+    }
+
+    document.addEventListener("click", event => {
+        const target = event.target;
+
+        if (target.closest("[data-cart-toggle]")) {
+            const panel = $("[data-food-cart]");
+            if (panel && !panel.hidden) closeCart();
+            else openCart();
+            return;
+        }
+
+        if (target.closest("[data-food-close]") ||
+            target.closest("[data-food-overlay]")) {
+            closeCart();
+            return;
+        }
+
+        const add = target.closest("[data-food-add]");
+        const inc = target.closest("[data-food-increase]");
+        const dec = target.closest("[data-food-decrease]");
+
+        if (add || inc || dec) {
+            const card = target.closest("[data-food-card]");
+            if (!card) return;
+
+            const id = card.dataset.itemId;
+            const price = Number(card.dataset.itemPrice);
+            if (!id || !Number.isFinite(price) || price < 0) {
+                console.error("Invalid menu item ID or price:", card);
+                return;
+            }
+
+            if (!cart[id]) {
+                cart[id] = {
+                    name: card.dataset.itemName || "Menu item",
+                    price: price,
+                    quantity: 0
+                };
+            }
+
+            cart[id].quantity += dec ? -1 : 1;
+            if (cart[id].quantity <= 0) delete cart[id];
+            save();
+            return;
+        }
+
+        const plus = target.closest("[data-food-drawer-increase]");
+        const minus = target.closest("[data-food-drawer-decrease]");
+
+        if (plus || minus) {
+            change(
+                plus ? plus.dataset.foodDrawerIncrease :
+                       minus.dataset.foodDrawerDecrease,
+                plus ? 1 : -1
+            );
+            return;
+        }
+
+        const remove = target.closest("[data-food-remove]");
+        if (remove) {
+            delete cart[remove.dataset.foodRemove];
+            save();
+            return;
+        }
+
+        if (target.closest("[data-food-clear]")) {
+            cart = {};
+            save();
+        }
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") closeCart();
+    });
+
+    let activeCategory = "all";
+    const search = $("[data-food-search]");
+
+    function filterCards() {
+        const query = (search?.value || "").trim().toLowerCase();
+        let visible = 0;
+
+        $$("[data-food-card]").forEach(card => {
+            const name = (card.dataset.itemName || "").toLowerCase();
+            const category = (card.dataset.itemCategory || "").toLowerCase();
+
+            const textMatch = !query ||
+                (name + " " + category).includes(query);
+
+            let categoryMatch = activeCategory === "all";
+
+            if (activeCategory === "other") {
+                categoryMatch = !["pizza", "burger", "dessert"].some(
+                    value => category.includes(value)
+                );
+            } else if (activeCategory !== "all") {
+                categoryMatch = category.includes(activeCategory);
+            }
+
+            card.hidden = !(textMatch && categoryMatch);
+            if (!card.hidden) visible++;
+        });
+
+        const noResults = $("[data-food-no-results]");
+        if (noResults) noResults.hidden = visible > 0;
+    }
+
+    if (search) search.addEventListener("input", filterCards);
+
+    $$("[data-food-filter]").forEach(button => {
+        button.addEventListener("click", () => {
+            activeCategory = button.dataset.foodFilter;
+            $$("[data-food-filter]").forEach(b =>
+                b.classList.toggle("is-active", b === button));
+            filterCards();
+        });
+    });
+
+    window.addEventListener("storage", event => {
+        if (event.key === KEY) {
+            try {
+                cart = JSON.parse(event.newValue || "{}") || {};
+            } catch (e) {
+                cart = {};
+            }
+            render();
+        }
+    });
+
+    render();
+})();
+
+</script>
+
+
+<!-- PIZZA_PALACE_PHOTO_RENDERER_V2 -->
+<script>
+(function () {
+  var photos = {"margherita":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85","regular pizza":"https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=85","farmhouse pizza":"https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=900&q=85","paneer tikka pizza":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85","veg burger":"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85","chocolate brownie":"https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=85"};
+
+  function addPhotos() {
+    var cards = document.querySelectorAll(
+      '[data-food-card], .restaurant-menu-item, .food-menu-card, .menu-item-card'
+    );
+
+    cards.forEach(function (card) {
+      var title = card.dataset.itemName || "";
+      var titleEl = card.querySelector("h2, h3, h4, [data-item-name]");
+      if (!title && titleEl) title = titleEl.textContent;
+      title = title.trim().toLowerCase();
+
+      var url = photos[title];
+      if (!url || card.querySelector(".food-menu-photo")) return;
+
+      var img = document.createElement("img");
+      img.className = "food-menu-photo";
+      img.src = url;
+      img.alt = title;
+      img.loading = "lazy";
+      img.onerror = function () { img.style.display = "none"; };
+
+      card.insertBefore(img, card.firstChild);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", addPhotos);
+  } else {
+    addPhotos();
+  }
+})();
+</script>
+
+
+<!-- FOOD MENU IMAGE ALIGNMENT FIX -->
+<script>
+(function () {
+    function fixFoodCardImages() {
+        document.querySelectorAll(".food-card").forEach(function (card) {
+            var imageBox = card.querySelector(".food-card-image");
+            if (!imageBox) return;
+
+            // Move any image inserted directly into the card
+            // into the fixed-height image container.
+            var insertedImages = Array.from(
+                card.querySelectorAll("img.food-menu-photo")
+            );
+
+            insertedImages.forEach(function (img) {
+                if (img.parentElement !== imageBox) {
+                    imageBox.insertBefore(img, imageBox.firstChild);
+                }
+            });
+
+            var realPhoto = imageBox.querySelector(
+                "img.food-menu-photo, img:not(.food-menu-photo)"
+            );
+
+            if (realPhoto) {
+                imageBox.classList.add("has-real-photo");
+
+                // Hide the fallback plate when a real photo exists.
+                var fallback = imageBox.querySelector(".food-image-fallback");
+                if (fallback) fallback.style.display = "none";
+            }
+        });
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", fixFoodCardImages);
+    } else {
+        fixFoodCardImages();
+    }
+})();
+</script>
+
+
+<!-- FOOD MENU CARD IMAGE REPAIR V3 -->
+<script>
+(function () {
+  var photos = {"margerita":"https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=85","margherita":"https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=85","regualr pizza":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85","regular pizza":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85","farmhouse pizza":"https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=900&q=85","paneer tikka pizza":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85","veg burger":"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85","chocolate brownie":"https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=85"};
+
+  function normalize(text) {
+    return (text || "").replace(/\\s+/g, " ").trim().toLowerCase();
+  }
+
+  function findCardTitle(card) {
+    var title = card.dataset.itemName || "";
+    if (!title) {
+      var el = card.querySelector("h1, h2, h3, h4, [data-item-name]");
+      if (el) title = el.textContent;
+    }
+    return normalize(title);
+  }
+
+  function repairImages() {
+    var selector = [
+      "[data-food-card]",
+      ".restaurant-menu-item",
+      ".food-card",
+      ".food-menu-card",
+      ".menu-item-card"
+    ].join(",");
+
+    document.querySelectorAll(selector).forEach(function (card) {
+      var title = findCardTitle(card);
+      var url = photos[title];
+      if (!url) return;
+
+      // Reuse an existing image if possible.
+      var img = card.querySelector("img.food-menu-photo");
+      if (!img) {
+        img = document.createElement("img");
+        img.className = "food-menu-photo";
+        img.alt = title;
+        img.loading = "lazy";
+
+        // Prefer the card's image container when it exists.
+        var box = card.querySelector(
+          ".food-card-image, .food-card-media, .food-menu-image, .menu-item-image"
+        );
+
+        if (box) {
+          box.querySelectorAll("img").forEach(function (oldImg) {
+            oldImg.style.display = "none";
+          });
+          box.insertBefore(img, box.firstChild);
+        } else {
+          card.insertBefore(img, card.firstChild);
+        }
+      }
+
+      img.src = url;
+      img.alt = title;
+      img.onerror = function () {
+        img.style.display = "none";
+      };
+
+      var fallback = card.querySelector(
+        ".food-image-fallback, .food-card-placeholder"
+      );
+      if (fallback) fallback.style.display = "none";
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", repairImages);
+  } else {
+    repairImages();
+  }
+})();
+</script>
+
+
+<!-- TARGETED FOOD IMAGE FIX V4 -->
+<script>
+(function () {
+    var photos = {"margerita":"https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=85","margherita":"https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=85","regualr pizza":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85","regular pizza":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85","farmhouse pizza":"https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=900&q=85","paneer tikka pizza":"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=85","veg burger":"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85","chocolate brownie":"https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=85"};
+
+    function normalized(value) {
+        return (value || "").replace(/\\s+/g, " ").trim().toLowerCase();
+    }
+
+    function repair() {
+        document.querySelectorAll(".food-card").forEach(function (card) {
+            var heading = card.querySelector(".food-card-body h3, h3");
+            var name = normalized(
+                card.dataset.itemName || (heading && heading.textContent)
+            );
+            var url = photos[name];
+            var box = card.querySelector(".food-card-image");
+
+            if (!box || !url) return;
+
+            var img = box.querySelector("img.food-menu-photo");
+            if (!img) {
+                img = document.createElement("img");
+                img.className = "food-menu-photo";
+                img.alt = heading ? heading.textContent.trim() : name;
+                img.loading = "lazy";
+                box.insertBefore(img, box.firstChild);
+            }
+
+            if (img.dataset.foodImageUrl !== url) {
+                img.src = url;
+                img.dataset.foodImageUrl = url;
+            }
+
+            img.style.display = "block";
+            img.onerror = function () {
+                img.style.display = "none";
+            };
+
+            // Hide old placeholder images/icons only when a real photo loads.
+            img.onload = function () {
+                box.querySelectorAll(
+                    ".food-image-fallback, .food-card-placeholder"
+                ).forEach(function (placeholder) {
+                    placeholder.style.display = "none";
+                });
+
+                box.classList.add("has-food-photo");
+            };
+        });
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", repair);
+    } else {
+        repair();
+    }
+
+    // Some AEM authoring/page scripts can render cards after initial load.
+    window.addEventListener("load", repair);
+})();
+</script>

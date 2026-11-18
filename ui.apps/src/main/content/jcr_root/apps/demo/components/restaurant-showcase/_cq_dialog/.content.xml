@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Restaurant Showcase"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <sectionTitle
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Section Title"
+                        name="./sectionTitle"
+                        value="Discover Restaurants"/>
+                    <restaurants
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Restaurant Cards">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./restaurants">
+                            <items jcr:primaryType="nt:unstructured">
+                                <restaurantName
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Restaurant Name"
+                                    name="restaurantName"/>
+                                <restaurantImage
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="Restaurant Image"
+                                    forceSelection="{Boolean}true"
+                                    name="restaurantImage"
+                                    rootPath="/content/dam"/>
+                                <cuisine
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Cuisine"
+                                    name="cuisine"/>
+                                <description
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                    fieldLabel="Description"
+                                    name="description"/>
+                                <rating
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                    fieldLabel="Rating (0–5)"
+                                    max="{Long}5"
+                                    min="{Long}0"
+                                    name="rating"
+                                    step="{Decimal}0.1"/>
+                                <detailsLink
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="Restaurant Details Link"
+                                    forceSelection="{Boolean}false"
+                                    name="detailsLink"
+                                    rootPath="/content"/>
+                            </items>
+                        </field>
+                    </restaurants>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

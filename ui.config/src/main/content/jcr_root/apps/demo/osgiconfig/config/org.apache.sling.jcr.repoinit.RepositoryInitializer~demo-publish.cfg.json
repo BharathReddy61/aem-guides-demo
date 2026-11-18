@@ -1,0 +1,11 @@
+{
+  "scripts": [
+    "create service user demo-publish-user with path system/demo\nset ACL for demo-publish-user\n    allow jcr:read,crx:replicate,jcr:versionManagement,jcr:modifyProperties on /content/demo\nend",
+
+    "ensure nodes (sling:Folder) /var/demo\nensure nodes (sling:Folder) /var/demo/contacts",
+
+    "create service user demo-contact-service-user with forced path system/cq:services/demo",
+
+    "set ACL on /var/demo/contacts (ACLOptions=merge)\n    allow jcr:read,rep:write for demo-contact-service-user\nend"
+  ]
+}

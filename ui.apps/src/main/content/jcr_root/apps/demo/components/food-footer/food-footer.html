@@ -1,0 +1,44 @@
+<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories='demo.food-footer'}"></sly>
+
+<footer class="foodapp-footer">
+    <div class="foodapp-footer__container">
+
+        <div class="foodapp-footer__brand">
+            <a class="foodapp-footer__logo"
+               href="/content/demo/us/en.html#foodapp-banner"><span>${properties.brandName || 'Food'}</span><span>App</span></a>
+
+            <p data-sly-test="${properties.tagline}">${properties.tagline}</p>
+            <p data-sly-test="${properties.description}">${properties.description}</p>
+        </div>
+
+        <div class="foodapp-footer__links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="/content/demo/us/demo-page.html#foodapp-banner">Home</a></li>
+            </ul>
+        </div>
+
+        <div class="foodapp-footer__links">
+            <h3>Our Restaurants</h3>
+            <ul>
+                <li><a href="/content/demo/us/en/burger-hub.html">Burger Hub</a></li>
+                <li><a href="/content/demo/us/en/pizza-palace.html">Pizza Palace</a></li>
+                <li><a href="/content/demo/us/en/biryani-house.html">Biryani House</a></li>
+                <li><a href="/content/demo/us/en/pasta-street.html">Pasta Street</a></li>
+                <li><a href="/content/demo/us/en/sushi-world.html">Sushi World</a></li>
+            </ul>
+        </div>
+
+        <div class="foodapp-footer__contact">
+            <h3>Contact</h3>
+            <p data-sly-test="${properties.contactAddress}">${properties.contactAddress}</p>
+            <p data-sly-test="${properties.contactLocation}">${properties.contactLocation}</p>
+        </div>
+
+    </div>
+
+    <div class="foodapp-footer__bottom">
+        <p data-sly-test="${properties.copyright}">${properties.copyright}</p>
+    </div>
+</footer>

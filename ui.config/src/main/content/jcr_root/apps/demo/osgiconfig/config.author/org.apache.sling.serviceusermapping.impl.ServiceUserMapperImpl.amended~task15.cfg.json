@@ -1,0 +1,5 @@
+{
+  "user.mapping": [
+    "aem-guides-demo.core:task15-service=demo-task15-user"
+  ]
+}

@@ -1,0 +1,46 @@
+.wordpress-container {
+    padding: 30px;
+}
+
+.wordpress-heading {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.wordpress-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.wordpress-card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.wordpress-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.wordpress-date {
+    font-size: 13px;
+    color: #777;
+}
+
+.wordpress-description {
+    margin: 15px 0;
+}
+
+.wordpress-card a {
+    color: #1473e6;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .wordpress-grid {
+        grid-template-columns: 1fr;
+    }
+}

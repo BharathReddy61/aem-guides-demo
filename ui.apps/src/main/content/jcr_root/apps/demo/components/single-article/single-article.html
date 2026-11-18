@@ -1,0 +1,9 @@
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories='demo.singlearticle'}"></sly>
+
+<div class="single-article${properties.enablePii == 'true' && properties.cssClass ? ' ' : ''}${properties.enablePii == 'true' && properties.cssClass ? properties.cssClass : ''}">
+    <div class="single-article-content">
+        <p>Single Article Component</p>
+    </div>
+</div>

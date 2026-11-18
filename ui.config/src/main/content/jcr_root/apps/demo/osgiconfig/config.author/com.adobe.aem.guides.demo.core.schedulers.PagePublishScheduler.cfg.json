@@ -1,0 +1,6 @@
+{
+  "schedulerName": "PagePublishScheduler",
+  "cronExpression": "0 0/1 * * * ?",
+  "pagePath": "/content/demo/us",
+  "enabled": true
+}
